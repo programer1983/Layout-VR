@@ -1,0 +1,111 @@
+.top {
+    background-color: var(--text-dark);
+    /* height: 600px; */
+    overflow-x: hidden;
+}
+.top__inner {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+}
+.top__content {
+    display: flex;
+    flex-direction: column;
+}
+.top__title {
+    color: var(--white);
+    font-size: 70px;
+    line-height: 1.1;
+    font-family: var(--header-font);
+    font-weight: 600;
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.top__title span{
+    color: var(--primary-color-dark);
+    font-size: 75px;
+}
+.top__text {
+    color: var(--text-light);
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 550px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.top__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.top__buttons-explore {
+    background-color: var(--primary-color-dark);
+    color: var(--text-dark);
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 13px 20px;
+    transition: background-color .3s ease;
+    &:hover{
+        background-color: rgb(75, 87, 71);
+        color: var(--white);
+    }
+}
+.top__buttons-more {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+}
+.ri-play-large-fill {
+    color: var(--text-light);
+    font-size: 18px;
+    background: var(--gradient-2);
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .3s ease;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+.top__buttons-more span{
+    color: var(--text-light);
+    font-size: 16px;
+    transition: color .3s ease;
+    &:hover{
+        color: var(--white);
+    }
+}
+.top__iamage{
+    position: relative;
+}
+.top__iamage::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+    clip-path: polygon(10rem 0, 100% 0, 100% 100%, 0 100%);
+    background-color: var(--primary-color-dark);
+}
+.top__iamage-img{
+     position: relative;
+     max-width: 550px;
+     width: 100%;
+     z-index: 1;
+}
+
+@media (max-width: 1060px){
+    .top__inner {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 100px;
+    }
+}
+
+
+

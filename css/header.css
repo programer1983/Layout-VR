@@ -1,0 +1,136 @@
+
+.header {
+    background-color: var(--text-dark);
+    padding: 30px 0;
+    position: relative;
+    z-index: 1;
+}
+.header__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__logo {
+    color: var(--primary-color-dark);
+    font-size: 25px;
+    font-family: var(--header-font);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.header__nav {
+}
+.header__list {
+    display: flex;
+    align-items: center;
+    gap: 30px
+}
+.header__list.active-menu {
+    left: 0;
+}
+.header__item {
+}
+.header__link {
+    color: var(--text-light);
+    font-size: 16px;
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease;
+    &:hover{
+        border-color: var(--primary-color-dark);
+        color: var(--primary-color-dark);
+    }
+}
+.header__button {
+    background-color: var(--text-dark);
+    border: 2px solid var(--primary-color-dark);
+    color: var(--primary-color-dark);
+    padding: 13px 20px;
+    border-radius: 5px;
+    transition: background-color .3s ease;
+    &:hover{
+       background-color: rgb(70, 63, 63);
+    }
+}
+.header__menu{
+    display: none;
+}
+.header__menu-tem {
+}
+.header__menu-link {
+}
+.header__burger {
+    display: none;
+    width: 50px;
+    height: 22px;
+    padding-top: 10px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+.header__burger span {
+    background-color: var(--white);
+    width: 70%;
+    height: 2px;
+    transform: scale(1);
+}
+
+.header__burger::before,
+.header__burger::after {
+    content: "";
+    background-color: var(--white);
+    width: 70%;
+    height: 2px;
+    position: absolute;
+    transition: all .3s ease;
+}
+
+.header__burger::before {
+    top: 0;
+}
+
+.header__burger::after {
+    bottom: 0;
+}
+
+.active.header__burger span {
+    transform: scale(0);
+}
+
+.active.header__burger::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+
+.active.header__burger::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+@media (max-width: 780px){
+    .header__button{
+        display: none;
+    }
+    .header__burger {
+        display: flex;
+    }
+    .header__list{
+        position: fixed;
+        max-height: 400px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        right: 0;
+        background-color: var(--text-dark);
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+        padding-top: 100px;
+        transition: all .5s ease;
+        z-index: -1;
+    }
+    .header__menu-link{
+        color: var(--white);
+        font-size: 18px;
+    }
+}
